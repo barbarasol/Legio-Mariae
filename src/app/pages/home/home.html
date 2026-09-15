@@ -1,0 +1,107 @@
+<div class="home-container">
+
+  <header class="home-header">
+
+    <div class="portal-title">
+      <h1>Portal Legio Mariae</h1>
+    </div>
+
+    <div class="user-profile">
+
+      <i class="bi bi-person-circle"></i>
+
+      <div class="user-info">
+        <span class="user-name">
+          {{ usuario.nome }}
+        </span>
+
+        <span class="user-role">
+          {{ usuario.funcao }}
+        </span>
+      </div>
+
+      <i class="bi bi-chevron-down"></i>
+
+    </div>
+
+  </header>
+
+  <main class="home-content">
+
+    <section class="welcome-section">
+
+      <div>
+        <span class="welcome-label">
+          BEM-VINDA AO PORTAL
+        </span>
+
+        <h2>
+          Olá, {{ usuario.nome }}! 👋
+        </h2>
+
+        <p>
+          Que bom ter você conosco.
+          Aqui você poderá acompanhar e organizar
+          as informações da Legião de Maria.
+        </p>
+      </div>
+
+    </section>
+
+    <section class="cards-section">
+
+      <div class="info-card">
+
+        <div class="card-icon">
+          <i class="bi bi-people"></i>
+        </div>
+
+        <div>
+          <h3>Filiados</h3>
+
+          <p>
+            Consulte e gerencie os membros.
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="info-card">
+
+        <div class="card-icon">
+          <i class="bi bi-calendar-check"></i>
+        </div>
+
+        <div>
+          <h3>Atividades</h3>
+
+          <p>
+            Acompanhe as atividades da sua comunidade.
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="info-card">
+
+        <div class="card-icon">
+          <i class="bi bi-bar-chart"></i>
+        </div>
+
+        <div>
+          <h3>Relatórios</h3>
+
+          <p>
+            Consulte informações e indicadores.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</div>

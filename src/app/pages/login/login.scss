@@ -1,0 +1,197 @@
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  background: #fff;
+}
+
+/* =========================
+   LADO DA IMAGEM
+========================= */
+
+.login-image {
+  width: 50%;
+  min-height: 100vh;
+
+  // background-image: url('logo-legio-mariae.png');
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+}
+
+.login-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 38, 92, 0.45);
+}
+
+.image-overlay {
+  position: relative;
+  z-index: 1;
+
+  color: white;
+  text-align: center;
+}
+
+.image-overlay img {
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+.image-overlay h1 {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.image-overlay p {
+  margin-top: 10px;
+  font-size: 17px;
+}
+
+
+/* =========================
+   LADO DO LOGIN
+========================= */
+
+.login-content {
+  width: 50%;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px;
+}
+
+.login-form {
+  width: 100%;
+  max-width: 420px;
+}
+
+.login-form h2 {
+  margin: 0;
+  color: #14265c;
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.subtitle {
+  margin: 10px 0 35px;
+  color: #777;
+  font-size: 15px;
+}
+
+
+/* =========================
+   CAMPOS
+========================= */
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+
+  color: #333;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.form-group input {
+  width: 100%;
+  height: 48px;
+
+  padding: 0 15px;
+
+  border: 1px solid #ddd;
+  border-radius: 8px;
+
+  font-size: 15px;
+
+  outline: none;
+
+  box-sizing: border-box;
+
+  transition: 0.2s;
+}
+
+.form-group input:focus {
+  border-color: #14265c;
+  box-shadow: 0 0 0 3px rgba(20, 38, 92, 0.1);
+}
+
+
+/* =========================
+   ESQUECI SENHA
+========================= */
+
+.forgot-password {
+  text-align: right;
+  margin-bottom: 25px;
+}
+
+.forgot-password a {
+  color: #14265c;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+
+/* =========================
+   BOTÃO
+========================= */
+
+.login-form button {
+  width: 100%;
+  height: 50px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #14265c;
+  color: white;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.login-form button:hover {
+  background: #0e1c47;
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 768px) {
+
+  .login-page {
+    flex-direction: column;
+  }
+
+  .login-image {
+    width: 100%;
+    min-height: 300px;
+  }
+
+  .login-content {
+    width: 100%;
+    min-height: auto;
+    padding: 40px 25px;
+  }
+
+}
