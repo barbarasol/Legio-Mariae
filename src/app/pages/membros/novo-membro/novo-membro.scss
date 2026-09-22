@@ -1,0 +1,137 @@
+.novo-membro-container {
+  min-height: 100vh;
+  background: #f5f6fa;
+  padding: 40px;
+}
+
+.page-header {
+  margin-bottom: 25px;
+}
+
+.page-header h2 {
+  color: #14265c;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.page-header p {
+  color: #666;
+}
+
+.form-card {
+  background: white;
+
+  border-radius: 12px;
+
+  padding: 25px;
+
+  box-shadow: 0 2px 8px rgba(0,0,0,.05);
+}
+
+.nav-tabs {
+  margin-bottom: 25px;
+}
+
+.nav-link {
+  color: #14265c;
+  font-weight: 600;
+}
+
+.nav-link.active {
+  color: #14265c;
+  border-color: #14265c #14265c #fff;
+}
+
+.form-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 20px;
+}
+
+.full-width {
+  grid-column: span 2;
+}
+
+.form-actions {
+  margin-top: 30px;
+
+  display: flex;
+  justify-content: flex-end;
+
+  gap: 10px;
+}
+
+.btn-primary {
+  background: #14265c;
+  border-color: #14265c;
+}
+
+.stepper {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 30px;
+}
+
+.step {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  min-width: 140px;
+}
+
+.step-circle {
+  width: 45px;
+  height: 45px;
+
+  border-radius: 50%;
+
+  background: #d8deef;
+
+  color: #14265c;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 700;
+
+  transition: .3s;
+}
+
+.step.active .step-circle {
+  background: #14265c;
+  color: white;
+}
+
+.step span {
+  margin-top: 10px;
+
+  text-align: center;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  color: #666;
+}
+
+.step.active span {
+  color: #14265c;
+}
+
+.step-line {
+  width: 120px;
+  height: 2px;
+
+  background: #d8deef;
+
+  margin: 0 10px;
+}

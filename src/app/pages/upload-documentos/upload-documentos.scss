@@ -1,0 +1,183 @@
+.page-container {
+  min-height: 100vh;
+  background: #f5f6fa;
+  padding: 40px;
+}
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.page-header {
+  margin-bottom: 25px;
+}
+
+.page-header h2 {
+  margin: 0;
+  color: #14265c;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.page-header p {
+  margin-top: 8px;
+  color: #666;
+  font-size: 15px;
+}
+
+/* =========================
+   CARD DE UPLOAD
+========================= */
+
+.upload-card {
+  background: #ffffff;
+
+  border: 2px dashed #d8deef;
+  border-radius: 12px;
+
+  padding: 50px;
+
+  text-align: center;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+  transition: all .2s ease;
+
+  margin-bottom: 25px;
+}
+
+.upload-card:hover {
+  border-color: #14265c;
+}
+
+.upload-icon {
+  font-size: 60px;
+  color: #14265c;
+  margin-bottom: 15px;
+}
+
+.upload-card h4 {
+  color: #14265c;
+  font-weight: 600;
+}
+
+.upload-card p {
+  color: #777;
+  margin-bottom: 25px;
+}
+
+.upload-card .btn-primary {
+  background: #14265c;
+  border-color: #14265c;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+.upload-card .btn-primary:hover {
+  background: #0f1d47;
+  border-color: #0f1d47;
+}
+
+/* =========================
+   LISTA DE DOCUMENTOS
+========================= */
+
+.documents-card {
+  background: #ffffff;
+
+  border-radius: 12px;
+
+  padding: 25px;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.card-title {
+  color: #14265c;
+
+  font-size: 20px;
+  font-weight: 600;
+
+  margin-bottom: 20px;
+}
+
+/* =========================
+   TABELA
+========================= */
+
+.table {
+  margin-bottom: 0;
+}
+
+.table thead th {
+  color: #14265c;
+  font-weight: 600;
+  border-bottom-width: 1px;
+}
+
+.table td,
+.table th {
+  vertical-align: middle;
+}
+
+.table tbody tr:hover {
+  background: #f8f9fc;
+}
+
+/* =========================
+   PDF
+========================= */
+
+.pdf-icon {
+  color: #dc3545;
+  font-size: 18px;
+  margin-right: 8px;
+}
+
+/* =========================
+   BOTÕES
+========================= */
+
+.btn-action {
+  width: 36px;
+  height: 36px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+}
+
+.btn-view {
+  color: #14265c;
+}
+
+.btn-download {
+  color: #198754;
+}
+
+.btn-delete {
+  background: #dc3545;
+  border-color: #dc3545;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 768px) {
+
+  .page-container {
+    padding: 20px;
+  }
+
+  .upload-card {
+    padding: 30px 20px;
+  }
+
+  .page-header h2 {
+    font-size: 24px;
+  }
+
+}

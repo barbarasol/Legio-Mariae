@@ -1,0 +1,189 @@
+<div class="config-container">
+  <!-- Cabeçalho -->
+  <div class="page-header">
+    <h2>Configurações</h2>
+
+    <p>Gerencie seu perfil, segurança e preferências.</p>
+  </div>
+
+  <div class="config-layout">
+    <!-- MENU LATERAL -->
+
+    <aside class="config-menu">
+      <button
+        class="menu-option"
+        [class.active]="abaSelecionada === 'perfil'"
+        (click)="abaSelecionada = 'perfil'"
+      >
+        <i class="bi bi-person-fill"></i>
+        Perfil
+      </button>
+
+      <button
+        class="menu-option"
+        [class.active]="abaSelecionada === 'seguranca'"
+        (click)="abaSelecionada = 'seguranca'"
+      >
+        <i class="bi bi-shield-lock-fill"></i>
+        Segurança
+      </button>
+
+      <button
+        class="menu-option"
+        [class.active]="abaSelecionada === 'preferencias'"
+        (click)="abaSelecionada = 'preferencias'"
+      >
+        <i class="bi bi-gear-fill"></i>
+        Preferências
+      </button>
+    </aside>
+
+    <!-- CONTEÚDO -->
+
+    <section class="config-content">
+      <!-- PERFIL -->
+
+      @if (abaSelecionada === 'perfil') {
+        <div class="config-card">
+          <div class="profile-header">
+            <i class="bi bi-person-circle profile-avatar"></i>
+
+            <div>
+              <h3>Bárbara Sol</h3>
+
+              <span> Administradora do Portal </span>
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <div>
+              <label>Nome Completo</label>
+
+              <input type="text" class="form-control" value="Bárbara Sol" />
+            </div>
+
+            <div>
+              <label>E-mail</label>
+
+              <input type="email" class="form-control" value="barbara@email.com" />
+            </div>
+
+            <div>
+              <label>Telefone</label>
+
+              <input type="text" class="form-control" />
+            </div>
+
+            <div>
+              <label>Função</label>
+
+              <input type="text" class="form-control" value="Administradora" />
+            </div>
+          </div>
+
+          <div class="actions">
+            <button class="btn btn-primary">Salvar Alterações</button>
+          </div>
+        </div>
+      }
+
+      <!-- SEGURANÇA -->
+
+      @if (abaSelecionada === 'seguranca') {
+        <div class="config-card">
+          <h3>Segurança</h3>
+
+          <p class="section-description">Altere sua senha de acesso.</p>
+
+          <div class="form-grid">
+            <div class="full-width">
+              <label>Senha Atual</label>
+
+              <input type="password" class="form-control" />
+            </div>
+
+            <div>
+              <label>Nova Senha</label>
+
+              <input type="password" class="form-control" />
+            </div>
+
+            <div>
+              <label>Confirmar Nova Senha</label>
+
+              <input type="password" class="form-control" />
+            </div>
+          </div>
+
+          <div class="security-info">
+            <div class="info-item">
+              <strong>Último acesso:</strong>
+              21/09/2026 20:15
+            </div>
+
+            <div class="info-item">
+              <strong>Última alteração de senha:</strong>
+              10/08/2026
+            </div>
+          </div>
+
+          <div class="actions">
+            <button class="btn btn-primary">Alterar Senha</button>
+          </div>
+        </div>
+      }
+
+      <!-- PREFERÊNCIAS -->
+
+      @if (abaSelecionada === 'preferencias') {
+        <div class="config-card">
+          <h3>Preferências</h3>
+
+          <p class="section-description">Personalize sua experiência no portal.</p>
+
+          <div class="preferences-list">
+            <div class="preference-item">
+              <div>
+                <strong> Receber notificações por e-mail </strong>
+
+                <p>Receber comunicados importantes.</p>
+              </div>
+
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" checked />
+              </div>
+            </div>
+
+            <div class="preference-item">
+              <div>
+                <strong> Receber notificações do sistema </strong>
+
+                <p>Exibir alertas dentro do portal.</p>
+              </div>
+
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" checked />
+              </div>
+            </div>
+
+            <div class="preference-item">
+              <div>
+                <strong> Modo Escuro </strong>
+
+                <p>Utilizar tema escuro.</p>
+              </div>
+
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" />
+              </div>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button class="btn btn-primary">Salvar Preferências</button>
+          </div>
+        </div>
+      }
+    </section>
+  </div>
+</div>

@@ -1,0 +1,133 @@
+<div class="dashboard-container">
+  <!-- Cabeçalho -->
+  <div class="page-header">
+    <h2>Dashboard</h2>
+
+    <p>Visão geral da Legião de Maria e seus principais indicadores.</p>
+  </div>
+
+  <!-- Cards de indicadores -->
+  <section class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-icon">
+        <i class="bi bi-people-fill"></i>
+      </div>
+
+      <div class="stat-content">
+        <h3>{{ dashboard.membros }}</h3>
+        <span>Total de Membros</span>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon">
+        <i class="bi bi-building"></i>
+      </div>
+
+      <div class="stat-content">
+        <h3>{{ dashboard.curias }}</h3>
+        <span>Cúrias</span>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon">
+        <i class="bi bi-bank"></i>
+      </div>
+
+      <div class="stat-content">
+        <h3>{{ dashboard.comitium }}</h3>
+        <span>Comitium</span>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon">
+        <i class="bi bi-diagram-3-fill"></i>
+      </div>
+
+      <div class="stat-content">
+        <h3>{{ dashboard.presidios }}</h3>
+        <span>Praesidia</span>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon">
+        <i class="bi bi-check-circle-fill"></i>
+      </div>
+
+      <div class="stat-content">
+        <h3>{{ dashboard.ativos }}</h3>
+        <span>Membros Ativos</span>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon">
+        <i class="bi bi-heart-fill"></i>
+      </div>
+
+      <div class="stat-content">
+        <h3>{{ dashboard.auxiliares }}</h3>
+        <span>Auxiliares</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Área dos gráficos -->
+  <section class="charts-grid">
+    <div class="chart-card">
+      <div class="card-title">Membros por Categoria</div>
+
+      <canvas id="membrosChart"></canvas>
+    </div>
+
+    <div class="chart-card">
+      <div class="card-title">Estrutura Organizacional</div>
+
+      <canvas id="estruturaChart"></canvas>
+    </div>
+  </section>
+
+  <!-- Gráfico maior -->
+  <section class="chart-card full-width">
+    <div class="card-title">Evolução de Membros</div>
+
+    <canvas id="evolucaoChart"></canvas>
+  </section>
+
+  <!-- Últimos membros -->
+  <section class="table-card">
+    <div class="card-title">Últimos Membros Cadastrados</div>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Função</th>
+          <th>Praesidium</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        @for (membro of ultimosMembros; track membro.nome) {
+          <tr>
+            <td>{{ membro.nome }}</td>
+
+            <td>{{ membro.funcao }}</td>
+
+            <td>{{ membro.presidium }}</td>
+
+            <td>
+              <span class="status-badge">
+                {{ membro.status }}
+              </span>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </section>
+</div>

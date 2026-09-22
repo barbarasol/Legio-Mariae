@@ -1,0 +1,63 @@
+<div class="page-container">
+  <div class="page-header">
+    <h2>Gestão de Documentos</h2>
+
+    <p>Faça upload e organize documentos.</p>
+  </div>
+
+  <div class="upload-card">
+    <i class="bi bi-file-earmark-pdf-fill upload-icon"></i>
+
+    <h4>Envie um documento PDF</h4>
+
+    <p>Arraste um arquivo para esta área ou selecione manualmente.</p>
+
+    <input type="file" accept=".pdf" hidden #fileInput />
+
+    <button class="btn btn-primary" (click)="fileInput.click()">Selecionar Arquivo</button>
+  </div>
+
+  <div class="documents-card">
+    <div class="card-title">Documentos enviados</div>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Documento</th>
+          <th>Data</th>
+          <th>Tamanho</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        @for (documento of documentos; track documento.nome) {
+          <tr>
+            <td>
+              <i class="bi bi-file-earmark-pdf text-danger"></i>
+              {{ documento.nome }}
+            </td>
+
+            <td>{{ documento.data }}</td>
+
+            <td>{{ documento.tamanho }}</td>
+
+            <td>
+              <button class="btn btn-sm btn-light me-2">
+                <i class="bi bi-eye"></i>
+              </button>
+
+              <button class="btn btn-sm btn-light me-2">
+                <i class="bi bi-download"></i>
+              </button>
+
+              <button class="btn btn-sm btn-danger me-2">
+                <i class="bi bi-trash"></i>
+              </button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

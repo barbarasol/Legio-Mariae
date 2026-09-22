@@ -1,6 +1,13 @@
 import { Routes } from '@angular/router';
 import { Layout } from './components/layout/layout';
 import { Home } from './pages/home/home';
+import { UploadDocumentos } from './pages/upload-documentos/upload-documentos';
+import { Dashboard } from './pages/dashboard/dashboard';
+import { Membros } from './pages/membros/membros';
+import { NovoMembro } from './pages/membros/novo-membro/novo-membro';
+import { Perfil } from './pages/perfil/perfil';
+import { Caixa } from './pages/caixa/caixa';
+import { Afiliacao } from './pages/afiliacao/afiliacao';
 
 export const routes: Routes = [
   {
@@ -22,6 +29,34 @@ export const routes: Routes = [
         path: 'home',
         component: Home
       },
+      {
+        path: 'upload-documentos',
+        component: UploadDocumentos
+      },
+      {
+        path: 'dashboard',
+        component: Dashboard
+      },
+      {
+        path: 'membros',
+        component: Membros
+      },
+      {
+        path: 'cadastro-membro',
+        component: NovoMembro
+      },
+      {
+        path: 'perfil',
+        component: Perfil
+      },
+      {
+        path: 'caixa',
+        component: Caixa
+      },
+      {
+        path: 'afiliacao',
+        component: Afiliacao
+      }
     ]
   },
   

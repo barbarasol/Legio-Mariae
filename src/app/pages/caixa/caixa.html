@@ -1,0 +1,290 @@
+<div class="caixa-container">
+  <!-- Cabeçalho -->
+  <div class="page-header">
+    <div>
+      <h2>Caixa</h2>
+      <p>Controle financeiro e acompanhamento das movimentações da Legião de Maria.</p>
+    </div>
+
+    <button class="btn btn-primary">
+      <i class="bi bi-plus-circle"></i>
+      Nova Movimentação
+    </button>
+  </div>
+
+  <!-- Filtros -->
+  <div class="filter-card">
+    <div class="card-title">
+      <i class="bi bi-funnel"></i>
+      Filtros
+    </div>
+
+    <div class="filters-grid">
+      <div>
+        <label>Mês</label>
+
+        <select class="form-select" [(ngModel)]="mesSelecionado">
+          <option value="01">Janeiro</option>
+          <option value="02">Fevereiro</option>
+          <option value="03">Março</option>
+          <option value="04">Abril</option>
+          <option value="05">Maio</option>
+          <option value="06">Junho</option>
+          <option value="07">Julho</option>
+          <option value="08">Agosto</option>
+          <option value="09">Setembro</option>
+          <option value="10">Outubro</option>
+          <option value="11">Novembro</option>
+          <option value="12">Dezembro</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Ano</label>
+
+        <select class="form-select" [(ngModel)]="anoSelecionado">
+          <option value="2026">2026</option>
+          <option value="2025">2025</option>
+          <option value="2024">2024</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Comitium</label>
+
+        <select class="form-select" [(ngModel)]="comitiumSelecionado">
+          <option value="Todos">Todos</option>
+
+          <option value="Comitium de Brasília">Comitium de Brasília</option>
+
+          <option value="Comitium de Goiânia">Comitium de Goiânia</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Cúria</label>
+
+        <select class="form-select" [(ngModel)]="curiaSelecionada">
+          <option value="Todas">Todas</option>
+
+          <option value="Cúria Nossa Senhora Aparecida">N. Sra. Aparecida</option>
+
+          <option value="Cúria Nossa Senhora de Fátima">N. Sra. de Fátima</option>
+
+          <option value="Cúria Nossa Senhora das Graças">N. Sra. das Graças</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Praesidium</label>
+
+        <select class="form-select" [(ngModel)]="presidiumSelecionado">
+          <option value="Todos">Todos</option>
+
+          <option value="Praesidium Rainha da Paz">Rainha da Paz</option>
+
+          <option value="Praesidium São José">São José</option>
+
+          <option value="Praesidium Mãe da Igreja">Mãe da Igreja</option>
+
+          <option value="Praesidium Imaculada Conceição">Imaculada Conceição</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="filter-actions">
+      <button class="btn btn-primary" (click)="aplicarFiltros()">
+        <i class="bi bi-search"></i>
+        Filtrar
+      </button>
+
+      <button class="btn btn-outline-secondary" (click)="limparFiltros()">
+        <i class="bi bi-x-circle"></i>
+        Limpar
+      </button>
+    </div>
+  </div>
+
+  <!-- Cards financeiros -->
+  <section class="stats-grid">
+    <div class="stat-card entrada">
+      <div class="stat-icon">
+        <i class="bi bi-arrow-down-circle-fill"></i>
+      </div>
+
+      <div class="stat-content">
+        <span>Total de Entradas</span>
+
+        <h3>
+          {{ formatarMoeda(totalEntradas) }}
+        </h3>
+      </div>
+    </div>
+
+    <div class="stat-card saida">
+      <div class="stat-icon">
+        <i class="bi bi-arrow-up-circle-fill"></i>
+      </div>
+
+      <div class="stat-content">
+        <span>Total de Saídas</span>
+
+        <h3>
+          {{ formatarMoeda(totalSaidas) }}
+        </h3>
+      </div>
+    </div>
+
+    <div class="stat-card saldo">
+      <div class="stat-icon">
+        <i class="bi bi-wallet2"></i>
+      </div>
+
+      <div class="stat-content">
+        <span>Saldo do Período</span>
+
+        <h3>
+          {{ formatarMoeda(saldo) }}
+        </h3>
+      </div>
+    </div>
+
+    <div class="stat-card acumulado">
+      <div class="stat-icon">
+        <i class="bi bi-graph-up-arrow"></i>
+      </div>
+
+      <div class="stat-content">
+        <span>Saldo Acumulado</span>
+
+        <h3>
+          {{ formatarMoeda(saldoAcumulado) }}
+        </h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gráficos -->
+  <section class="charts-grid">
+    <div class="chart-card">
+      <div class="card-title">Entradas x Saídas</div>
+
+      <div class="chart-container">
+        <canvas id="entradasSaidasChart"></canvas>
+      </div>
+    </div>
+
+    <div class="chart-card">
+      <div class="card-title">Despesas por Categoria</div>
+
+      <div class="chart-container">
+        <canvas id="categoriasChart"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tabela -->
+  <section class="table-card">
+    <div class="table-header">
+      <div>
+        <div class="card-title">Movimentações</div>
+
+        <span class="table-description">
+          {{ movimentacoesFiltradas.length }}
+          movimentação(ões) encontrada(s)
+        </span>
+      </div>
+
+      <button class="btn btn-outline-primary">
+        <i class="bi bi-file-earmark-pdf"></i>
+        Prestação de Contas
+      </button>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table align-middle">
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Tipo</th>
+            <th>Descrição</th>
+            <th>Categoria</th>
+            <th>Comitium</th>
+            <th>Cúria</th>
+            <th>Praesidium</th>
+            <th>Valor</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          @for (movimentacao of movimentacoesFiltradas; track movimentacao.id) {
+            <tr>
+              <td>
+                {{ movimentacao.data }}
+              </td>
+
+              <td>
+                @if (movimentacao.tipo === 'Entrada') {
+                  <span class="type-badge entrada-badge">
+                    <i class="bi bi-arrow-down"></i>
+                    Entrada
+                  </span>
+                } @else {
+                  <span class="type-badge saida-badge">
+                    <i class="bi bi-arrow-up"></i>
+                    Saída
+                  </span>
+                }
+              </td>
+
+              <td>
+                <strong>
+                  {{ movimentacao.descricao }}
+                </strong>
+              </td>
+
+              <td>
+                {{ movimentacao.categoria }}
+              </td>
+
+              <td>
+                {{ movimentacao.comitium }}
+              </td>
+
+              <td>
+                {{ movimentacao.curia }}
+              </td>
+
+              <td>
+                {{ movimentacao.presidium }}
+              </td>
+
+              <td>
+                <strong
+                  [class.text-success]="movimentacao.tipo === 'Entrada'"
+                  [class.text-danger]="movimentacao.tipo === 'Saída'"
+                >
+                  {{ movimentacao.tipo === 'Entrada' ? '+' : '-' }}
+                  {{ formatarMoeda(movimentacao.valor) }}
+                </strong>
+              </td>
+
+              <td>
+                <div class="action-buttons">
+                  <button class="btn btn-sm btn-light">
+                    <i class="bi bi-pencil"></i>
+                  </button>
+
+                  <button class="btn btn-sm btn-light text-danger">
+                    <i class="bi bi-trash"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>

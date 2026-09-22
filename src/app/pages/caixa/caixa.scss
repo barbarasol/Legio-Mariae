@@ -1,0 +1,450 @@
+.caixa-container {
+  min-height: 100vh;
+  background: #f5f6fa;
+  padding: 40px;
+}
+
+/* ============================= */
+/* CABEÇALHO */
+/* ============================= */
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 25px;
+
+  h2 {
+    margin: 0;
+    color: #14265c;
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+  p {
+    margin: 8px 0 0;
+    color: #666;
+    font-size: 15px;
+  }
+}
+
+
+/* ============================= */
+/* FILTROS */
+/* ============================= */
+
+.filter-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.card-title {
+  color: #14265c;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 20px;
+
+  i {
+    margin-right: 8px;
+  }
+}
+
+.filters-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+
+  label {
+    display: block;
+    margin-bottom: 7px;
+    color: #444;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .form-select {
+    min-height: 42px;
+    border: 1px solid #d8deef;
+    border-radius: 8px;
+    font-size: 13px;
+
+    &:focus {
+      border-color: #14265c;
+      box-shadow: 0 0 0 0.15rem rgba(20, 38, 92, 0.15);
+    }
+  }
+}
+
+.filter-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+
+/* ============================= */
+/* BOTÕES */
+/* ============================= */
+
+.btn-primary {
+  background: #14265c;
+  border-color: #14265c;
+  padding: 9px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+
+  &:hover {
+    background: #0f1d47;
+    border-color: #0f1d47;
+  }
+}
+
+
+/* ============================= */
+/* CARDS FINANCEIROS */
+/* ============================= */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  padding: 22px;
+
+  background: #fff;
+  border-radius: 12px;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+}
+
+.stat-icon {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  font-size: 23px;
+}
+
+.stat-content {
+  display: flex;
+  flex-direction: column;
+
+  span {
+    color: #777;
+    font-size: 12px;
+  }
+
+  h3 {
+    margin: 5px 0 0;
+    color: #14265c;
+    font-size: 20px;
+    font-weight: 700;
+  }
+}
+
+
+/* Entrada */
+
+.stat-card.entrada {
+  .stat-icon {
+    background: #e8f7ef;
+    color: #198754;
+  }
+
+  h3 {
+    color: #198754;
+  }
+}
+
+
+/* Saída */
+
+.stat-card.saida {
+  .stat-icon {
+    background: #fdecec;
+    color: #dc3545;
+  }
+
+  h3 {
+    color: #dc3545;
+  }
+}
+
+
+/* Saldo */
+
+.stat-card.saldo {
+  .stat-icon {
+    background: #eef1fa;
+    color: #14265c;
+  }
+}
+
+
+/* Acumulado */
+
+.stat-card.acumulado {
+  .stat-icon {
+    background: #fff7df;
+    color: #c9a227;
+  }
+}
+
+
+/* ============================= */
+/* GRÁFICOS */
+/* ============================= */
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+// .chart-card {
+//   background: #fff;
+//   border-radius: 12px;
+//   padding: 25px;
+//   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+// }
+
+.chart-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+  min-width: 0;
+  height: 350px;
+  overflow: hidden;
+}
+
+.chart-container {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  max-height: 260px;
+  overflow: hidden;
+}
+
+.chart-container canvas {
+  display: block !important;
+  width: 100% !important;
+  height: 260px !important;
+  max-height: 260px !important;
+}
+
+
+/* ============================= */
+/* TABELA */
+/* ============================= */
+
+.table-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.table-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 15px;
+
+  .card-title {
+    margin-bottom: 4px;
+  }
+}
+
+.table-description {
+  color: #888;
+  font-size: 12px;
+}
+
+.table {
+  margin-bottom: 0;
+
+  th {
+    padding: 14px 12px;
+
+    background: #f8f9fc;
+
+    color: #555;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    white-space: nowrap;
+  }
+
+  td {
+    padding: 14px 12px;
+
+    color: #666;
+
+    font-size: 13px;
+
+    vertical-align: middle;
+  }
+
+  tbody tr {
+    border-bottom: 1px solid #eee;
+
+    &:hover {
+      background: #fafbff;
+    }
+  }
+}
+
+
+/* ============================= */
+/* BADGES */
+/* ============================= */
+
+.type-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  padding: 5px 9px;
+
+  border-radius: 20px;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.entrada-badge {
+  background: #e8f7ef;
+  color: #198754;
+}
+
+.saida-badge {
+  background: #fdecec;
+  color: #dc3545;
+}
+
+
+/* ============================= */
+/* AÇÕES */
+/* ============================= */
+
+.action-buttons {
+  display: flex;
+  gap: 6px;
+
+  .btn {
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border-radius: 7px;
+  }
+}
+
+
+/* ============================= */
+/* RESPONSIVO */
+/* ============================= */
+
+@media (max-width: 1200px) {
+
+  .filters-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+@media (max-width: 900px) {
+
+  .caixa-container {
+    padding: 25px;
+  }
+
+  .page-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .filters-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .caixa-container {
+    padding: 20px;
+  }
+
+  .filters-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-actions {
+    justify-content: stretch;
+
+    button {
+      flex: 1;
+    }
+  }
+
+  .table-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .table-header .btn {
+    width: 100%;
+  }
+
+}
