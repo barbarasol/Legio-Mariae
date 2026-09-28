@@ -1,0 +1,61 @@
+@if (aberto) {
+
+<div class="modal-overlay">
+
+  <div class="modal-card">
+
+    <div class="modal-header">
+
+      <h4>{{ titulo }}</h4>
+
+      <button
+        class="close-btn"
+        (click)="onCancelar()"
+      >
+        <i class="bi bi-x-lg"></i>
+      </button>
+
+    </div>
+
+    <div class="modal-body">
+
+      <i
+        class="modal-icon"
+        [class.success]="tipo === 'success'"
+        [class.danger]="tipo === 'danger'"
+        [class.warning]="tipo === 'warning'"
+        [class.bi-check-circle-fill]="tipo === 'success'"
+        [class.bi-exclamation-triangle-fill]="tipo === 'warning'"
+        [class.bi-x-circle-fill]="tipo === 'danger'"
+      ></i>
+
+      <p>{{ mensagem }}</p>
+
+    </div>
+
+    <div class="modal-footer">
+
+      <button
+        class="btn btn-outline-secondary"
+        (click)="onCancelar()"
+      >
+        {{ textoCancelar }}
+      </button>
+
+      <button
+        class="btn"
+        [class.btn-success]="tipo === 'success'"
+        [class.btn-danger]="tipo === 'danger'"
+        [class.btn-warning]="tipo === 'warning'"
+        (click)="onConfirmar()"
+      >
+        {{ textoConfirmar }}
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+}

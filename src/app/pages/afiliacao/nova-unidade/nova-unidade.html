@@ -1,0 +1,255 @@
+<div class="nova-unidade-container">
+
+  <div class="page-header">
+    <h2>Nova Solicitação de Unidade</h2>
+
+    <p>
+      Solicite a criação de uma nova unidade para aprovação hierárquica.
+    </p>
+  </div>
+
+  <!-- Wizard -->
+  <div class="wizard-card">
+
+    <div class="wizard-steps">
+
+      <div class="step" [class.active]="etapa === 1">
+        <span>1</span>
+        Dados da Unidade
+      </div>
+
+      <div class="step" [class.active]="etapa === 2">
+        <span>2</span>
+        Estrutura
+      </div>
+
+      <div class="step" [class.active]="etapa === 3">
+        <span>3</span>
+        Justificativa
+      </div>
+
+      <div class="step" [class.active]="etapa === 4">
+        <span>4</span>
+        Revisão
+      </div>
+
+    </div>
+
+    <!-- ETAPA 1 -->
+    @if(etapa === 1) {
+
+      <div class="form-section">
+
+        <h4>Dados da Unidade</h4>
+
+        <div class="form-grid">
+
+          <div>
+            <label>Tipo da Unidade</label>
+
+            <select
+              class="form-select"
+              [(ngModel)]="solicitacao.tipo"
+            >
+              <option value="">Selecione</option>
+              <option value="comitium">Comitium</option>
+              <option value="curia">Cúria</option>
+              <option value="praesidium">Praesidium</option>
+            </select>
+          </div>
+
+          <div>
+            <label>Nome da Unidade</label>
+
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="solicitacao.nome"
+            >
+          </div>
+
+          <div>
+            <label>Data Prevista de Fundação</label>
+
+            <input
+              type="date"
+              class="form-control"
+              [(ngModel)]="solicitacao.dataFundacao"
+            >
+          </div>
+
+          <div>
+            <label>Responsável</label>
+
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="solicitacao.responsavel"
+            >
+          </div>
+
+        </div>
+
+      </div>
+
+    }
+
+    <!-- ETAPA 2 -->
+    @if(etapa === 2) {
+
+      <div class="form-section">
+
+        <h4>Estrutura Hierárquica</h4>
+
+        <div class="form-grid">
+
+          <div>
+            <label>Comitium Superior</label>
+
+            <select
+              class="form-select"
+              [(ngModel)]="solicitacao.comitium"
+            >
+              <option>Comitium de Brasília</option>
+              <option>Comitium de Goiânia</option>
+            </select>
+          </div>
+
+          @if(solicitacao.tipo === 'praesidium') {
+
+            <div>
+              <label>Cúria Superior</label>
+
+              <select
+                class="form-select"
+                [(ngModel)]="solicitacao.curia"
+              >
+                <option>Cúria Nossa Senhora Aparecida</option>
+                <option>Cúria Nossa Senhora de Fátima</option>
+              </select>
+            </div>
+
+          }
+
+        </div>
+
+      </div>
+
+    }
+
+    <!-- ETAPA 3 -->
+    @if(etapa === 3) {
+
+      <div class="form-section">
+
+        <h4>Justificativa</h4>
+
+        <label>
+          Motivo da criação da unidade
+        </label>
+
+        <textarea
+          rows="6"
+          class="form-control"
+          [(ngModel)]="solicitacao.justificativa"
+        ></textarea>
+
+        <div class="upload-area">
+
+          <i class="bi bi-file-earmark-arrow-up"></i>
+
+          <h5>Anexos</h5>
+
+          <p>
+            Ata de fundação, documentos ou arquivos complementares.
+          </p>
+
+          <button class="btn btn-outline-primary">
+            Selecionar Arquivo
+          </button>
+
+        </div>
+
+      </div>
+
+    }
+
+    <!-- ETAPA 4 -->
+    @if(etapa === 4) {
+
+      <div class="form-section">
+
+        <h4>Revisão da Solicitação</h4>
+
+        <div class="review-card">
+
+          <p>
+            <strong>Tipo:</strong>
+            {{ solicitacao.tipo }}
+          </p>
+
+          <p>
+            <strong>Nome:</strong>
+            {{ solicitacao.nome }}
+          </p>
+
+          <p>
+            <strong>Responsável:</strong>
+            {{ solicitacao.responsavel }}
+          </p>
+
+          <p>
+            <strong>Comitium:</strong>
+            {{ solicitacao.comitium }}
+          </p>
+
+          <p>
+            <strong>Cúria:</strong>
+            {{ solicitacao.curia }}
+          </p>
+
+          <p>
+            <strong>Justificativa:</strong>
+            {{ solicitacao.justificativa }}
+          </p>
+
+        </div>
+
+      </div>
+
+    }
+
+    <div class="wizard-actions">
+
+      @if(etapa > 1) {
+        <button
+          class="btn btn-outline-secondary"
+          (click)="voltar()"
+        >
+          Voltar
+        </button>
+      }
+
+      @if(etapa < 4) {
+        <button
+          class="btn btn-primary"
+          (click)="proximaEtapa()"
+        >
+          Próximo
+        </button>
+      }
+
+      @if(etapa === 4) {
+        <button
+          class="btn btn-success"
+          (click)="enviarSolicitacao()"
+        >
+          Enviar Solicitação
+        </button>
+      }
+
+    </div>
+
+  </div>
+
+</div>

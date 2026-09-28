@@ -8,6 +8,9 @@ import { NovoMembro } from './pages/membros/novo-membro/novo-membro';
 import { Perfil } from './pages/perfil/perfil';
 import { Caixa } from './pages/caixa/caixa';
 import { Afiliacao } from './pages/afiliacao/afiliacao';
+import { NovaUnidade } from './pages/afiliacao/nova-unidade/nova-unidade';
+import { SolicitacoesUnidades } from './pages/afiliacao/solicitacoes-unidades/solicitacoes-unidades';
+import { VisualizarSolicitacao } from './pages/afiliacao/solicitacoes-unidades/visualizar-solicitacao/visualizar-solicitacao';
 
 export const routes: Routes = [
   {
@@ -56,6 +59,18 @@ export const routes: Routes = [
       {
         path: 'afiliacao',
         component: Afiliacao
+      },
+      {
+        path: 'nova-unidade',
+        component: NovaUnidade
+      },
+      {
+        path: 'solicitacoes-unidades',
+        component: SolicitacoesUnidades
+      },
+      {
+        path: 'visualizar-solicitacao',
+        component: VisualizarSolicitacao
       }
     ]
   },

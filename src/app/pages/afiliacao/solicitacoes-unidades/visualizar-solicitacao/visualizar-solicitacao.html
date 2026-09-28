@@ -1,0 +1,178 @@
+<div class="detalhe-container">
+
+  <div class="page-header">
+
+    <div>
+      <h2>Solicitação de Nova Unidade</h2>
+
+      <p>
+        Analise as informações enviadas antes de aprovar ou rejeitar a solicitação.
+      </p>
+    </div>
+
+    <span class="status-badge pendente">
+      Pendente
+    </span>
+
+  </div>
+
+  <!-- Dados da Unidade -->
+  <div class="section-card">
+
+    <h4>Dados da Unidade</h4>
+
+    <div class="info-grid">
+
+      <div>
+        <label>Tipo</label>
+        <span>Praesidium</span>
+      </div>
+
+      <div>
+        <label>Nome</label>
+        <span>Praesidium Rainha da Paz</span>
+      </div>
+
+      <div>
+        <label>Responsável</label>
+        <span>Maria Oliveira</span>
+      </div>
+
+      <div>
+        <label>Data da Solicitação</label>
+        <span>20/09/2026</span>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Estrutura -->
+  <div class="section-card">
+
+    <h4>Estrutura Hierárquica</h4>
+
+    <div class="hierarchy">
+
+      <div class="hierarchy-item">
+        <i class="bi bi-building"></i>
+
+        <div>
+          <strong>Comitium</strong>
+          <span>Comitium de Brasília</span>
+        </div>
+      </div>
+
+      <i class="bi bi-arrow-down hierarchy-arrow"></i>
+
+      <div class="hierarchy-item">
+        <i class="bi bi-diagram-3"></i>
+
+        <div>
+          <strong>Cúria</strong>
+          <span>Cúria Nossa Senhora Aparecida</span>
+        </div>
+      </div>
+
+      <i class="bi bi-arrow-down hierarchy-arrow"></i>
+
+      <div class="hierarchy-item active">
+        <i class="bi bi-house-heart"></i>
+
+        <div>
+          <strong>Nova Unidade</strong>
+          <span>Praesidium Rainha da Paz</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Justificativa -->
+  <div class="section-card">
+
+    <h4>Justificativa</h4>
+
+    <p class="justificativa">
+      Solicitação de criação de nova unidade devido ao crescimento do número de membros da região e necessidade de melhor organização das atividades legionárias.
+    </p>
+
+  </div>
+
+  <!-- Documentos -->
+  <div class="section-card">
+
+    <h4>Documentos Anexados</h4>
+
+    <div class="document-list">
+
+      <div class="document-item">
+        <i class="bi bi-file-earmark-pdf-fill"></i>
+
+        <span>Ata de Fundação.pdf</span>
+
+        <button class="btn btn-sm btn-outline-primary">
+          <i class="bi bi-download"></i>
+        </button>
+      </div>
+
+      <div class="document-item">
+        <i class="bi bi-file-earmark-pdf-fill"></i>
+
+        <span>Termo de Aprovação.pdf</span>
+
+        <button class="btn btn-sm btn-outline-primary">
+          <i class="bi bi-download"></i>
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Parecer -->
+  <div class="section-card">
+
+    <h4>Parecer da Aprovação</h4>
+
+    <textarea
+      rows="5"
+      class="form-control"
+      placeholder="Informe o parecer da análise..."
+    ></textarea>
+
+  </div>
+
+  <!-- Ações -->
+  <div class="actions">
+
+    <button class="btn btn-outline-secondary">
+      Voltar
+    </button>
+
+    <button class="btn btn-danger">
+      <i class="bi bi-x-circle"></i>
+      Rejeitar
+    </button>
+
+    <button class="btn btn-success" (click)="abrirModalAprovacao()">
+      <i class="bi bi-check-circle"></i>
+      Aprovar
+    </button>
+
+  </div>
+
+</div>
+
+<!-- Modal Aprovação -->
+<app-modal-confirmacao
+  [aberto]="modalAprovacao"
+  titulo="Confirmar Aprovação"
+  mensagem="Deseja aprovar a criação da unidade Praesidium Rainha da Paz?"
+  textoConfirmar="Aprovar"
+  textoCancelar="Cancelar"
+  tipo="success"
+  (confirmar)="confirmarAprovacao()"
+  (cancelar)="cancelarModal()"
+></app-modal-confirmacao>

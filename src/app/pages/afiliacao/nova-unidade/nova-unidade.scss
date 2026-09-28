@@ -1,0 +1,114 @@
+.nova-unidade-container {
+  padding: 40px;
+  background: #f5f6fa;
+  min-height: 100vh;
+}
+
+.page-header {
+  margin-bottom: 25px;
+
+  h2 {
+    color: #14265c;
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+
+  p {
+    color: #666;
+    margin: 0;
+  }
+}
+
+.wizard-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.05);
+}
+
+.wizard-steps {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #999;
+  font-weight: 600;
+
+  span {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #e9ecef;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &.active {
+    color: #14265c;
+
+    span {
+      background: #14265c;
+      color: white;
+    }
+  }
+}
+
+.form-section h4 {
+  color: #14265c;
+  margin-bottom: 25px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 20px;
+}
+
+label {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.upload-area {
+  margin-top: 25px;
+  border: 2px dashed #d8deef;
+  border-radius: 12px;
+  padding: 40px;
+  text-align: center;
+
+  i {
+    font-size: 45px;
+    color: #14265c;
+  }
+
+  h5 {
+    margin-top: 15px;
+    color: #14265c;
+  }
+
+  p {
+    color: #777;
+  }
+}
+
+.review-card {
+  background: #f8f9fc;
+  padding: 25px;
+  border-radius: 12px;
+}
+
+.wizard-actions {
+  margin-top: 30px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}

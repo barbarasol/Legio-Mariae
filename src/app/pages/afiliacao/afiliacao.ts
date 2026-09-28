@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router, RouterLink } from '@angular/router';
 
 interface Presidium {
   id: number;
@@ -23,7 +24,10 @@ interface Comitium {
 
 @Component({
   selector: 'app-afiliacao',
-  imports: [FormsModule],
+  imports: [
+    FormsModule, 
+    RouterLink
+  ],
   templateUrl: './afiliacao.html',
   styleUrl: './afiliacao.scss'
 })

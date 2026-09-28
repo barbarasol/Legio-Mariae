@@ -1,0 +1,151 @@
+.detalhe-container {
+  padding: 40px;
+  background: #f5f6fa;
+  min-height: 100vh;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+
+  h2 {
+    color: #14265c;
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+
+  p {
+    margin: 0;
+    color: #666;
+  }
+}
+
+.status-badge {
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.pendente {
+  background: #fff4db;
+  color: #a48112;
+}
+
+.section-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.05);
+
+  h4 {
+    color: #14265c;
+    margin-bottom: 20px;
+  }
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 20px;
+
+  label {
+    display: block;
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 5px;
+  }
+
+  span {
+    font-weight: 600;
+    color: #333;
+  }
+}
+
+.hierarchy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hierarchy-item {
+  width: 320px;
+  padding: 18px;
+  border-radius: 12px;
+  background: #eef1fa;
+
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  i {
+    font-size: 26px;
+    color: #14265c;
+  }
+
+  strong {
+    display: block;
+    color: #14265c;
+  }
+
+  span {
+    color: #555;
+  }
+}
+
+.hierarchy-item.active {
+  background: #14265c;
+
+  i,
+  strong,
+  span {
+    color: white;
+  }
+}
+
+.hierarchy-arrow {
+  margin: 12px 0;
+  color: #14265c;
+  font-size: 22px;
+}
+
+.justificativa {
+  color: #555;
+  line-height: 1.7;
+}
+
+.document-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.document-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 12px 15px;
+  border-radius: 8px;
+  background: #f8f9fc;
+
+  i {
+    color: #dc3545;
+    font-size: 20px;
+  }
+
+  span {
+    flex: 1;
+    margin-left: 12px;
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 25px;
+}
